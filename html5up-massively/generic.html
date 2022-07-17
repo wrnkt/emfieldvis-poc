@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Application</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Application</h1>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Application</a></li>
+							<li><a href="https://docs.google.com/presentation/d/1_L_mv8Yg2Yl078CPoybb2fIh1lvP2LZBTAOrLYoDNy0/edit?usp=sharing">Presentation</a></li>
+						</ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>It all starts with a floorplan</h1>
+									<ul class="actions">
+										<pre>                                      </pre>
+										
+										<li><a href="#" class="button primary large" id = "custom-file">Upload A File</a></li>
+										<input type = "file" id = "real-file" hidden = "hidden" accept = "image/*"/>
+										</ul>
+								</header>
+								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+								<p>Upload an image of your floor plan to get started and work with our intuitive application to discover the safest place for you to stay in your home.</p>
+							</section>
+
+					</div>
+
+				
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+		<script type = "text/javascript">
+			const realFileBtn = document.getElementById("real-file");
+			const customFileBtn = document.getElementById("custom-file");
+
+			customFileBtn.addEventListener("click", function() {
+				realFileBtn.click();
+			});
+		</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
