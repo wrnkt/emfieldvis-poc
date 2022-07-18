@@ -21,7 +21,7 @@ defaultwidth = 500
 
 appliances = []
 
-applistoutput="/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv"
+applistoutput="../content/applianceslist/applistoutput.csv"
 
 # MATH
 def FieldfromCurrentRadius(current, radius):
@@ -60,7 +60,7 @@ def enableDrag(self): # bind click and drag to functions
 
 def createAppliance(applianceselection):
     print(applianceselection)
-    placeholderimage = Image.open('/Users/niko/Documents/emfvisualizer/appliancepics/circle1.png')
+    placeholderimage = Image.open('../content/appliancepics/circle1.png')
     print(appdata._get_value(appdata[appdata['appliance']==applianceselection].index.values[0], 'current'))
     placeholderimage = placeholderimage.resize((int(25*pixelspercm),int(25*pixelspercm)), Image.ANTIALIAS)
     i = ImageTk.PhotoImage(placeholderimage)
@@ -87,7 +87,7 @@ def loadData():
 
 def calculate():
 
-    with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv') as csvfile:
+    with open('../content/applianceslist/applistoutput.csv') as csvfile:
         reader = csv.reader(csvfile)
         numsources = 0
         for row in reader:
@@ -98,7 +98,7 @@ def calculate():
     currentfactor = np.zeros(numsources)
     colorsetterlist = np.zeros(numsources) # unused
 
-    with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv') as csvfile:
+    with open('../content/applianceslist/applistoutput.csv') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         i = 0
         for row in reader: # populates x and y data from csv
@@ -131,7 +131,7 @@ def quitprogram():
 
 columnnames = ['appliance', 'xcm', 'ycm','current','radius']
 
-appdata = pandas.read_csv('/Users/niko/Documents/emfvisualizer/applianceslist/applist.csv', names=columnnames)
+appdata = pandas.read_csv('../content/applianceslist/applist.csv', names=columnnames)
 sourcenames = appdata.appliance.tolist()
 
 root = Tk()
