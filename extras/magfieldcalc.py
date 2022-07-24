@@ -26,7 +26,7 @@ def CurrentfromRadiusAndField(radius, field):
     return current
 
 def calculate():
-    with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv') as csvfile:
+    with open('../content/applianceslist/applistoutput.csv') as csvfile:
         reader = csv.reader(csvfile)
         numsources = 0
         for row in reader:
@@ -37,7 +37,7 @@ def calculate():
     currentfactor = np.zeros(numsources)
     colorsetterlist = np.zeros(numsources)
 
-    with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv') as csvfile:
+    with open('../content/applianceslist/applistoutput.csv') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         i = 0
         for row in reader: # populates x and y data from csv

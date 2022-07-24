@@ -9,7 +9,7 @@ import magpylib as mgpy
 from magpylib.source.magnet import Box,Cylinder
 from magpylib import Collection, displaySystem
 
-imagedir = "/Users/niko/Documents/emfvisualizer/floorplans/floorplan1.jpg"
+imagedir = "../content/floorplans/floorplan1.jpg"
 imagepil = Image.open(imagedir) # open floorplan (PIL)
 imagew = imagepil.width 
 imageh = imagepil.height
@@ -25,7 +25,7 @@ ylist = np.linspace(0,imageh,yl)
 
 collection = mgpy.Collection()
 
-with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutputTEST.csv') as csvfile:
+with open('../content/applianceslist/applistoutputTEST.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     i = 0
     for row in reader:

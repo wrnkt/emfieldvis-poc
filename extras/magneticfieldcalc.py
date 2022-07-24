@@ -28,7 +28,7 @@ def CurrentfromRadiusAndField(radius, field):
     current = (2*np.pi*field*radius)/(muo)
     return current
 
-imagedir = "/Users/niko/Documents/emfvisualizer/floorplans/floorplan1.jpg"
+imagedir = "../content/floorplans/floorplan1.jpg"
 imagepil = Image.open(imagedir)
 heighttowidth = imagepil.height/imagepil.width
 imagepil = imagepil.resize((defaultwidth, int(defaultwidth*heighttowidth)), Image.ANTIALIAS)
@@ -43,7 +43,7 @@ pixelspercm = ((imagew/(estimatedwidth*100)) + (imageh/(estimatedlength*100)))/2
 print('pixelspercm = ' + str(pixelspercm))
 
 
-with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutputTEST.csv') as csvfile:
+with open('../content/applianceslist/applistoutputTEST.csv') as csvfile:
     reader = csv.reader(csvfile)
     numsources = 0
     for row in reader:
@@ -54,7 +54,7 @@ yarr = np.zeros(numsources)
 currentfactor = np.zeros(numsources)
 colorsetterlist = np.zeros(numsources)
 
-with open('/Users/niko/Documents/emfvisualizer/applianceslist/applistoutputTEST.csv') as csvfile:
+with open('../content/applianceslist/applistoutputTEST.csv') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     i = 0
     for row in reader: # populates x and y data from csv

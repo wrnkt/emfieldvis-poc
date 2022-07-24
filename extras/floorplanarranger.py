@@ -11,7 +11,7 @@ from tkinter import simpledialog
 
 appliances = []
 
-applistoutput="/Users/niko/Documents/emfvisualizer/applianceslist/applistoutput.csv"
+applistoutput="../content/applianceslist/applistoutput.csv"
 
 # clear output file
 def clearFile():
@@ -41,7 +41,7 @@ def followerUpdate(follower, leader):
 
 def createAppliance(applianceselection):
     print(applianceselection)
-    placeholderimage = Image.open('/Users/niko/Documents/emfvisualizer/appliancepics/circle1.png')
+    placeholderimage = Image.open('../content/appliancepics/circle1.png')
     print(appdata._get_value(appdata[appdata['appliance']==applianceselection].index.values[0], 'current'))
     placeholderimage = placeholderimage.resize((int(25*pixelspercm),int(25*pixelspercm)), Image.ANTIALIAS)
     i = ImageTk.PhotoImage(placeholderimage)
@@ -70,7 +70,7 @@ defaultwidth = 1000
 
 columnnames = ['appliance', 'xcm', 'ycm','current','radius']
 
-appdata = pandas.read_csv('/Users/niko/Documents/emfvisualizer/applianceslist/applist.csv', names=columnnames)
+appdata = pandas.read_csv('../content/applianceslist/applist.csv', names=columnnames)
 sourcenames = appdata.appliance.tolist()
 
 root = Tk()
