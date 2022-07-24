@@ -12,6 +12,8 @@ import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.figure import Figure
 
+import PATHS
+
 # definitions
 
 muo = np.pi*4e-7
@@ -21,7 +23,8 @@ defaultwidth = 500
 
 appliances = []
 
-applistoutput="../content/applianceslist/applistoutput.csv"
+APPLIST_OUTPUT_PATH=PATHS.CONTENT+PATHS.APPLIANCES
+PLACEHOLDER_PATH=PATHS.CONTENT+PATHS.PLACEHOLDER
 
 # MATH
 def FieldfromCurrentRadius(current, radius):
@@ -38,7 +41,7 @@ def CurrentfromRadiusAndField(radius, field):
 
 def clearFile(fpath): # clear output file
     if os.path.exists(fpath):
-        f = open(applistoutput, "w+")
+        f = open(APPLIST_OUTPUT_PATH, "w+")
         f.close()
 
 # functions handling dragging widgets on screen
@@ -60,7 +63,7 @@ def enableDrag(self): # bind click and drag to functions
 
 def createAppliance(applianceselection):
     print(applianceselection)
-    placeholderimage = Image.open('../content/appliancepics/circle1.png')
+    placeholderimage = Image.open(PLACEHOLDER_PATH)
     print(appdata._get_value(appdata[appdata['appliance']==applianceselection].index.values[0], 'current'))
     placeholderimage = placeholderimage.resize((int(25*pixelspercm),int(25*pixelspercm)), Image.ANTIALIAS)
     i = ImageTk.PhotoImage(placeholderimage)
@@ -78,16 +81,16 @@ def deleteLast():
     appliances.pop().destroy()
 
 def loadData():
-    clearFile(applistoutput)
+    clearFile(APPLIST_OUTPUT_PATH)
     for a in appliances:
-        with open(applistoutput,'a', newline='') as fd:
+        with open(APPLIST_OUTPUT_PATH,'a', newline='') as fd:
             current = appdata._get_value(appdata[appdata['appliance']==a.cget("text")].index.values[0], 'current')
             print(current)
             fd.write(a.cget("text")+","+str(a.winfo_rootx())+","+str(a.winfo_rooty())+","+str(current)+"\n")
 
 def calculate():
 
-    with open('../content/applianceslist/applistoutput.csv') as csvfile:
+    with open(APPLIST_OUTPUT_PATH) as csvfile:
         reader = csv.reader(csvfile)
         numsources = 0
         for row in reader:
@@ -98,7 +101,7 @@ def calculate():
     currentfactor = np.zeros(numsources)
     colorsetterlist = np.zeros(numsources) # unused
 
-    with open('../content/applianceslist/applistoutput.csv') as csvfile:
+    with open(APPLIST_OUTPUT_PATH) as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         i = 0
         for row in reader: # populates x and y data from csv
@@ -131,7 +134,7 @@ def quitprogram():
 
 columnnames = ['appliance', 'xcm', 'ycm','current','radius']
 
-appdata = pandas.read_csv('../content/applianceslist/applist.csv', names=columnnames)
+appdata = pandas.read_csv((PATHS.CONTENT+PATHS.APPLIANCES2), names=columnnames)
 sourcenames = appdata.appliance.tolist()
 
 root = Tk()
