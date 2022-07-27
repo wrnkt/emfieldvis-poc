@@ -19,28 +19,18 @@ from PATHS import APPLIST_OUTPUT_PATH, \
                     PLACEHOLDER_PATH, \
                     APPLIST_OUTPUT_PATH_2
 
+import MagFieldCalculator
+
 # definitions
 
-muo = np.pi*4e-7
+# muo = np.pi*4e-7
 acceptablemag = 1e-6 # microTeslas
 
 defaultwidth = 500
 
 appliances = []
 
-
-# MATH
-def FieldfromCurrentRadius(current, radius):
-    b = (muo*current)/(2*np.pi*radius)
-    return b
-
-def RadiusfromCurrentAndField(current, b):
-    radius = (muo*current)/(2*np.pi*b)
-    return radius
-
-def CurrentfromRadiusAndField(radius, field):
-    current = (2*np.pi*field*radius)/(muo)
-    return current
+mfc = MagFieldCalculator.MagFieldCalculatorO()
 
 def clearFile(fpath): # clear output file
     if os.path.exists(fpath):
@@ -119,7 +109,7 @@ def calculate():
     axes = plt.gca()
     plt.cla()
     for x,y,i,colorsetter in zip(xarr,yarr,currentfactor,colorsetterlist):
-        radius = RadiusfromCurrentAndField(i, acceptablemag)*defaultwidth*pixelspercm # radius in meters > cm > pixels radius
+        radius = mfc.RadiusfromCurrentAndField(i, acceptablemag)*defaultwidth*pixelspercm # radius in meters > cm > pixels radius
         print(radius)
         circle = plt.Circle(((x),(y-50)),radius,facecolor='r',alpha=0.1)
         axes.add_artist(circle)
