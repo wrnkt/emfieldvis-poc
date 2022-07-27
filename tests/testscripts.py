@@ -2,18 +2,6 @@ import numpy as np
 
 muo = 4*np.pi*10**(-7)
 
-def FieldfromCurrentRadius(current, radius):
-    b = (muo*current)/(2*np.pi*radius)
-    return b
-
-def RadiusfromCurrentAndField(current, b):
-    radius = (muo*current)/(2*np.pi*b)
-    return radius
-
-def CurrentfromRadiusAndField(radius, field):
-    current = (2*np.pi*field*radius)/(muo)
-    return current
-
 calclist = np.array([(0.9144, 0.1e-6), # Refrigerator
                     (0.22, 3e-6), # Computer
                     (0.15, 3e-6), # Laptop
