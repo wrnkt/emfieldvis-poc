@@ -5,7 +5,6 @@ class MagFieldCalculatorO:
     def __init__(self):
         self.muo = np.pi*4e-7
 
-
     def FieldfromCurrentRadius(self, current, radius):
         b = (self.muo*current)/(2*np.pi*radius)
         return b
