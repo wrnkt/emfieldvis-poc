@@ -1,5 +1,5 @@
 from tkinter import *
-from PIL import ImageTk,Image  
+from PIL import ImageTk,Image
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas
@@ -12,7 +12,9 @@ import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.figure import Figure
 
-import PATHS
+from PATHS import APPLIST_OUTPUT_PATH, \
+                    PLACEHOLDER_PATH, \
+                    APPLIST_OUTPUT_PATH_2
 
 # definitions
 
@@ -23,8 +25,6 @@ defaultwidth = 500
 
 appliances = []
 
-APPLIST_OUTPUT_PATH=PATHS.CONTENT+PATHS.APPLIANCES
-PLACEHOLDER_PATH=PATHS.CONTENT+PATHS.PLACEHOLDER
 
 # MATH
 def FieldfromCurrentRadius(current, radius):
@@ -134,7 +134,7 @@ def quitprogram():
 
 columnnames = ['appliance', 'xcm', 'ycm','current','radius']
 
-appdata = pandas.read_csv((PATHS.CONTENT+PATHS.APPLIANCES2), names=columnnames)
+appdata = pandas.read_csv((APPLIST_OUTPUT_PATH_2), names=columnnames)
 sourcenames = appdata.appliance.tolist()
 
 root = Tk()
@@ -148,7 +148,7 @@ imagedir = filedialog.askopenfilename()
 imagepil = Image.open(imagedir)
 heighttowidth = imagepil.height/imagepil.width
 imagepil = imagepil.resize((defaultwidth, int(defaultwidth*heighttowidth)), Image.ANTIALIAS)
-w = imagepil.width 
+w = imagepil.width
 h = imagepil.height
 img = ImageTk.PhotoImage(imagepil)
 
@@ -192,4 +192,3 @@ closebutton = Button(rightFrame, command = quitprogram, text="Quit", width="10",
 closebutton.grid(row=7, sticky="NEW")
 
 root.mainloop()
-
