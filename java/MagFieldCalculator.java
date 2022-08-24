@@ -12,21 +12,25 @@ public class MagFieldCalculator
         return this.numberCalls;
     }
 
+    public void incrementCalls() {
+        this.numberCalls++;
+    }
+
     public double radiusFromCurrentAndField(double current, double b){
-        numberCalls++;
+        incrementCalls();
         double radius = (muo*current)/(2*Math.PI*b);
         System.out.println(returnCalls());
         return radius;
     }
 
     public double fieldFromCurrentAndRadius(double current, double radius){
-        numberCalls++;
+        incrementCalls();
         double b = (muo*current)/(2*Math.PI*radius);
         return b;
     }
 
     public double currentFromRadiusAndField(double radius, double field) {
-        numberCalls++;
+        incrementCalls();
         double current = (2*Math.PI*field*radius)/(muo);
         return current;
     }
