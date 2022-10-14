@@ -1,0 +1,6 @@
+pillow
+numpy
+matplotlib
+pandas
+csv
+

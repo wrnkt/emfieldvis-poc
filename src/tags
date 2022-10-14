@@ -1,0 +1,76 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APPLIANCES	./PATHS.py	/^APPLIANCES="applianceslist\/applistoutput.csv"$/;"	v
+APPLIANCES2	./PATHS.py	/^APPLIANCES2="applianceslist\/applist.csv"$/;"	v
+APPLIST_OUTPUT_PATH	./PATHS.py	/^APPLIST_OUTPUT_PATH=CONTENT+APPLIANCES$/;"	v
+APPLIST_OUTPUT_PATH	./tkinter_prototype.py	/^                    APPLIST_OUTPUT_PATH_2$/;"	i
+APPLIST_OUTPUT_PATH_2	./PATHS.py	/^APPLIST_OUTPUT_PATH_2=CONTENT+APPLIANCES2$/;"	v
+APPLIST_OUTPUT_PATH_2	./tkinter_prototype.py	/^                    APPLIST_OUTPUT_PATH_2$/;"	i
+CONTENT	./PATHS.py	/^CONTENT="..\/content\/"$/;"	v
+CurrentfromRadiusAndField	./MagFieldCalculator.py	/^    def CurrentfromRadiusAndField(self, radius, field):$/;"	m	class:MagFieldCalculatorO
+FieldfromCurrentRadius	./MagFieldCalculator.py	/^    def FieldfromCurrentRadius(self, current, radius):$/;"	m	class:MagFieldCalculatorO
+Figure	./tkinter_prototype.py	/^from matplotlib.figure import Figure$/;"	i
+Image	./tkinter_prototype.py	/^from PIL import ImageTk,Image$/;"	i
+Image	./tkinter_prototype.py	/^import PIL.Image$/;"	i
+ImageTk	./tkinter_prototype.py	/^from PIL import ImageTk,Image$/;"	i
+MagFieldCalculator	./tkinter_prototype.py	/^import MagFieldCalculator$/;"	i
+MagFieldCalculatorO	./MagFieldCalculator.py	/^class MagFieldCalculatorO:$/;"	c
+PIL	./tkinter_prototype.py	/^import PIL.Image$/;"	i
+PLACEHOLDER	./PATHS.py	/^PLACEHOLDER="appliancepics\/circle1.png"$/;"	v
+PLACEHOLDER_PATH	./PATHS.py	/^PLACEHOLDER_PATH=CONTENT+PLACEHOLDER$/;"	v
+PLACEHOLDER_PATH	./tkinter_prototype.py	/^                    APPLIST_OUTPUT_PATH_2$/;"	i
+RadiusfromCurrentAndField	./MagFieldCalculator.py	/^    def RadiusfromCurrentAndField(self, current, b):$/;"	m	class:MagFieldCalculatorO
+__init__	./MagFieldCalculator.py	/^    def __init__(self):$/;"	m	class:MagFieldCalculatorO
+acceptablemag	./tkinter_prototype.py	/^acceptablemag = 1e-6 # microTeslas$/;"	v
+appdata	./tkinter_prototype.py	/^appdata = pandas.read_csv((APPLIST_OUTPUT_PATH_2), names=columnnames)$/;"	v
+appliances	./tkinter_prototype.py	/^appliances = []$/;"	v
+calculate	./tkinter_prototype.py	/^def calculate():$/;"	f
+clearFile	./tkinter_prototype.py	/^def clearFile(fpath): # clear output file$/;"	f
+closebutton	./tkinter_prototype.py	/^closebutton = tk.Button(rightFrame, command = quitprogram, text="Quit", width="10", height="5")$/;"	v
+columnnames	./tkinter_prototype.py	/^columnnames = ['appliance', 'xcm', 'ycm','current','radius']$/;"	v
+createAppliance	./tkinter_prototype.py	/^def createAppliance(applianceselection):$/;"	f
+csv	./tkinter_prototype.py	/^import csv$/;"	i
+defaultwidth	./tkinter_prototype.py	/^defaultwidth = 500$/;"	v
+deleteLast	./tkinter_prototype.py	/^def deleteLast():$/;"	f
+deletebutton	./tkinter_prototype.py	/^deletebutton = tk.Button(rightFrame, command = deleteLast, text="Delete Last Appliance", width="10", height="5")$/;"	v
+donebutton	./tkinter_prototype.py	/^donebutton = tk.Button(rightFrame, command = loadData, text="Confirm Arrangement", width="10", height="5")$/;"	v
+dragmotion	./tkinter_prototype.py	/^def dragmotion(event):$/;"	f
+dragstart	./tkinter_prototype.py	/^def dragstart(event):$/;"	f
+dropdown	./tkinter_prototype.py	/^dropdown = tk.OptionMenu(rightFrame, optionchoice, *sourcenames)$/;"	v
+enableDrag	./tkinter_prototype.py	/^def enableDrag(self): # bind click and drag to functions$/;"	f
+estimatedlength	./tkinter_prototype.py	/^estimatedlength = simpledialog.askfloat("Input", "What is the length of this floorplan (meters)?", parent=root,minvalue=0.0, maxvalue=100.0)$/;"	v
+estimatedwidth	./tkinter_prototype.py	/^estimatedwidth = simpledialog.askfloat("Input", "What is the width of this floorplan (meters)?", parent=root,minvalue=0.0, maxvalue=100.0)$/;"	v
+exitbutton	./tkinter_prototype.py	/^exitbutton = tk.Button(rightFrame, command = calculate, text="Calculate", width="10", height="5")$/;"	v
+filedialog	./tkinter_prototype.py	/^from tkinter import filedialog, simpledialog$/;"	i
+h	./tkinter_prototype.py	/^h = imagepil.height$/;"	v
+heighttowidth	./tkinter_prototype.py	/^heighttowidth = imagepil.height\/imagepil.width$/;"	v
+imagedir	./tkinter_prototype.py	/^imagedir = filedialog.askopenfilename()$/;"	v
+imagepil	./tkinter_prototype.py	/^imagepil = Image.open(imagedir)$/;"	v
+imagepil	./tkinter_prototype.py	/^imagepil = imagepil.resize((defaultwidth, int(defaultwidth*heighttowidth)), Image.ANTIALIAS)$/;"	v
+img	./tkinter_prototype.py	/^img = ImageTk.PhotoImage(imagepil)$/;"	v
+leftFrame	./tkinter_prototype.py	/^leftFrame = tk.Frame(root)$/;"	v
+loadData	./tkinter_prototype.py	/^def loadData():$/;"	f
+matplotlib	./tkinter_prototype.py	/^import matplotlib$/;"	i
+matplotlib	./tkinter_prototype.py	/^import matplotlib.pyplot as plt$/;"	i
+mfc	./tkinter_prototype.py	/^mfc = MagFieldCalculator.MagFieldCalculatorO()$/;"	v
+np	./MagFieldCalculator.py	/^import numpy as np$/;"	i
+np	./tkinter_prototype.py	/^import numpy as np$/;"	i
+optionchoice	./tkinter_prototype.py	/^optionchoice = tk.StringVar(rightFrame)$/;"	v
+os	./tkinter_prototype.py	/^import os$/;"	i
+pandas	./tkinter_prototype.py	/^import pandas$/;"	i
+piccanvas	./tkinter_prototype.py	/^piccanvas = tk.Canvas(leftFrame, width = w, height = h) # set canvas size based on floorplan size$/;"	v
+pixelspercm	./tkinter_prototype.py	/^pixelspercm = ((w\/(estimatedwidth*100)) + (h\/(estimatedlength*100)))\/2$/;"	v
+placebutton	./tkinter_prototype.py	/^placebutton = tk.Button(rightFrame, command = lambda : createAppliance(optionchoice.get()), text="Place", width="10", height="5")$/;"	v
+plt	./tkinter_prototype.py	/^import matplotlib.pyplot as plt$/;"	i
+promptlabel	./tkinter_prototype.py	/^promptlabel = tk.Label(rightFrame,text="Select an appliance: ")$/;"	v
+quitprogram	./tkinter_prototype.py	/^def quitprogram():$/;"	f
+rightFrame	./tkinter_prototype.py	/^rightFrame = tk.Frame(root, width = 500, height = h, highlightbackground="black", highlightthickness=2, background="light grey")$/;"	v
+root	./tkinter_prototype.py	/^root = tk.Tk()$/;"	v
+simpledialog	./tkinter_prototype.py	/^from tkinter import filedialog, simpledialog$/;"	i
+sourcenames	./tkinter_prototype.py	/^sourcenames = appdata.appliance.tolist()$/;"	v
+tk	./tkinter_prototype.py	/^import tkinter as tk$/;"	i
+w	./tkinter_prototype.py	/^w = imagepil.width$/;"	v
